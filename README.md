@@ -1,16 +1,44 @@
-# school_chatbot
+A mobile chatbot app where students can ask questions and get instant answers using Google’s Gemini 2.0 Flash model.
 
-A new Flutter project.
+🛠️ Tech Stack
+Frontend: Flutter (main.dart)
 
-## Getting Started
+Backend: Python Flask (app.py)
 
-This project is a starting point for a Flutter application.
+AI Model: Gemini 2.0 Flash (Google AI Studio)
 
-A few resources to get you started if this is your first Flutter project:
+Database: SQLite (stores chat history)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+How It Works
+Students type their questions in the Flutter app.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+The app sends the question to the Flask backend.
+
+The backend forwards the question to Gemini 2.0 Flash API.
+
+Gemini responds with an answer.
+
+The backend sends the answer back to the Flutter app.
+
+Both the question and answer are stored in SQLite.
+
+Project Structure
+bash
+Copy
+Edit
+/main.dart        # Flutter frontend
+/app.py           # Flask server + Gemini API integration
+/database.py      # Handles SQLite database
+/main.py          # (Optional) Other backend logic if needed
+Snapshots
+(Add screenshots of your app and chatbot here.)
+
+Setup
+Clone the repo.
+
+Add your Gemini API key in app.py.
+
+Run app.py to start the Flask server.
+
+Launch the Flutter app.
+
