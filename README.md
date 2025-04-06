@@ -1,3 +1,4 @@
+📱 Student Chatbot App with Gemini AI
 A mobile chatbot app where students can ask questions and get instant answers using Google’s Gemini 2.0 Flash model.
 
 🛠️ Tech Stack
@@ -9,36 +10,52 @@ AI Model: Gemini 2.0 Flash (Google AI Studio)
 
 Database: SQLite (stores chat history)
 
-How It Works
-Students type their questions in the Flutter app.
+🌐 Architecture
+Flutter app sends user queries to the Flask server.
 
-The app sends the question to the Flask backend.
+Flask server processes the request and calls Gemini API.
 
-The backend forwards the question to Gemini 2.0 Flash API.
+Gemini API responds with the answer.
 
-Gemini responds with an answer.
+Server sends the response back to Flutter app.
 
-The backend sends the answer back to the Flutter app.
+Chat history (questions and answers) is stored in SQLite.
 
-Both the question and answer are stored in SQLite.
-
-Project Structure
+📂 Project Structure
 bash
 Copy
 Edit
-/main.dart        # Flutter frontend
-/app.py           # Flask server + Gemini API integration
-/database.py      # Handles SQLite database
-/main.py          # (Optional) Other backend logic if needed
-Snapshots
-(Add screenshots of your app and chatbot here.)
+/main.dart        # Flutter frontend (UI and API calls)
+/app.py           # Flask server and Gemini API integration
+/database.py      # SQLite database handling
+/main.py          # Additional backend logic (if used)
+⚙️ Setup Instructions
+1. Clone the repository
+bash
+Copy
+Edit
+git clone https://github.com/your-username/your-repo-name.git
+2. Install Python dependencies
+bash
+Copy
+Edit
+pip install flask flask-cors google-generativeai
+3. Set up Gemini API Key
+Get your API key from Google AI Studio.
 
-Setup
-Clone the repo.
+Add it in app.py:
 
-Add your Gemini API key in app.py.
-
-Run app.py to start the Flask server.
-
-Launch the Flutter app.
-
+python
+Copy
+Edit
+genai.configure(api_key="YOUR_API_KEY")
+4. Run the Flask server
+bash
+Copy
+Edit
+python app.py
+5. Run the Flutter app
+bash
+Copy
+Edit
+flutter run
